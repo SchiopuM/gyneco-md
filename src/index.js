@@ -6,12 +6,12 @@ import { FirebaseAppProvider, AuthProvider, useFirebaseApp } from 'reactfire';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAOQmBdMp7bErWveJF_LDJYNWnh2dscN8w",
-  authDomain: "gyneco-md.firebaseapp.com",
-  projectId: "gyneco-md",
-  storageBucket: "gyneco-md.appspot.com",
-  messagingSenderId: "933475377585",
-  appId: "1:933475377585:web:0c4860cc4d84e3151e9d90"
+  apiKey: "AIzaSyApf4y7AhiL19mi4xq4lkyaoiRcMx_jupE",
+  authDomain: "gyneco-md-d6205.firebaseapp.com",
+  projectId: "gyneco-md-d6205",
+  storageBucket: "gyneco-md-d6205.appspot.com",
+  messagingSenderId: "35932457398",
+  appId: "1:35932457398:web:3769cf38bf0982cb255917"
 }
 
 const AppInstance = () => {
