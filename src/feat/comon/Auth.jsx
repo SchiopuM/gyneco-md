@@ -2,9 +2,10 @@ import React from "react";
 import { useAuth } from "reactfire";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useSigninCheck, useUser } from "reactfire";
-import { Button } from "react-bootstrap";
 import { BsBoxArrowInRight } from "react-icons/bs";
 import { useHistory, useLocation } from "react-router";
+import style from "./navbar/Navbar.module.css";
+import arrow from "../../assets/arrow.png";
 
 export const Auth = () => {
   const auth = useAuth();
@@ -27,13 +28,13 @@ export const Auth = () => {
   return (
     <>
       {!signInCheckResult?.signedIn ? (
-        <Button style={{ backgroundColor: "#007344" }} onClick={signIn}>
-          Login <BsBoxArrowInRight />
-        </Button>
+        <button className={style.btn} onClick={signIn}>
+          Login <img src={arrow} alt="img" height="10px" />
+        </button>
       ) : (
-        <Button style={{ backgroundColor: "#007344" }} onClick={signOut}>
+        <button className={style.btn} onClick={signOut}>
           {user?.displayName} <BsBoxArrowInRight size="25" />
-        </Button>
+        </button>
       )}
     </>
   );

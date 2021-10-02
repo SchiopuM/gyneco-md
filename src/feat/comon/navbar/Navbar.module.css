@@ -1,0 +1,27 @@
+.btn {
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #007344;
+  border-radius: 25px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 145px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+}
+
+.link {
+  text-decoration: none;
+  color: #1f4f81;
+  font-family: "regular";
+  font-size: 18px;
+}

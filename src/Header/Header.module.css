@@ -1,0 +1,41 @@
+.wrap {
+  display: flex;
+  align-items: flex-end;
+}
+
+.title {
+  color: #1f4f81;
+  font-family: "bold";
+  font-weight: bold;
+  font-size: 55px;
+}
+.secondTitle {
+  color: #007344;
+  font-family: "italic";
+  font-weight: normal;
+  font-size: 50px;
+}
+.text {
+  color: #1f4f81;
+  font-size: 18px;
+  font-weight: 400;
+}
+.header button {
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #007344;
+  border-radius: 25px;
+}
+
+.header img {
+  height: 300px;
+}
+
+.textWrap {
+  width: 50%;
+}
+
+.header {
+  margin-top: 100px;
+}
