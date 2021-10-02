@@ -2,6 +2,8 @@ import React from "react";
 import { useAuth } from 'reactfire';
 import { signInWithPopup,GoogleAuthProvider } from 'firebase/auth'
 import { useSigninCheck ,useUser} from 'reactfire';
+import {Button} from 'react-bootstrap';
+import { BsBoxArrowInRight } from "react-icons/bs";
 
 
 export const Auth = () => {
@@ -19,10 +21,10 @@ export const Auth = () => {
       }
 
     return (<>
+      
     {!signInCheckResult?.signedIn 
-    ?<button onClick= {signIn} >Login</button>
-    :<button onClick= {signOut}>LogOut</button>
+    ?<Button style={{backgroundColor:"#007344"}} onClick= {signIn} >Login <BsBoxArrowInRight /></Button>
+    :<Button style={{backgroundColor:"#007344"}} onClick= {signOut}>{user?.displayName} <BsBoxArrowInRight size="25" /></Button>
     }
-      <div>{user?.displayName}</div>
-      </>
+  </>
     )}

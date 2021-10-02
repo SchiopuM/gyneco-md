@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { App } from './App';
 import { getAuth } from 'firebase/auth';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { FirebaseAppProvider, AuthProvider, useFirebaseApp } from 'reactfire';
 
 
