@@ -6,7 +6,7 @@ import { useSigninCheck ,useUser} from 'reactfire';
 
 export const Auth = () => {
     const auth = useAuth();
-    const {  status, data: signInCheckResult } = useSigninCheck();
+    const { data: signInCheckResult } = useSigninCheck();
     const { data: user } = useUser();
 
     const signIn = async () => {
@@ -17,18 +17,12 @@ export const Auth = () => {
       const signOut = async () => {
         await auth.signOut();
       }
-      if(status === "loading"){
-        return <div>loading..</div>
-      }
-    console.log(auth);
-    console.log(signInCheckResult.signedIn);
+
     return (<>
     {!signInCheckResult?.signedIn 
     ?<button onClick= {signIn} >Login</button>
     :<button onClick= {signOut}>LogOut</button>
     }
-
-        
       <div>{user?.displayName}</div>
       </>
     )}
