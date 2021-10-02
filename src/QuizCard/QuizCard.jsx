@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import QuizHeader from "./components/QuizHeader";
 import style from "./QuizCard.module.css";
+import headImg from "../assets/Group.png";
 
 const QuizCard = ({ subject }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -12,11 +14,12 @@ const QuizCard = ({ subject }) => {
   const subj = state[subject];
 
   const {
-    app,
-    scoreSection,
-    questionSection,
-    questionCount,
-    questionText,
+    // app,
+    // scoreSection,
+    // questionSection,
+    // questionCount,
+    // questionText,
+    btn,
     answerSection,
     correct,
     incorrect,
@@ -38,30 +41,44 @@ const QuizCard = ({ subject }) => {
     }
   };
   return (
-    <div className={app}>
+    <div style={{ margin: "100px 0px" }}>
+      <QuizHeader />
       {showScore ? (
-        <div className={scoreSection}>
-          You scored {score} out of {subj.length}
-        </div>
+        <p>some</p>
       ) : (
-        <>
-          <div className={questionSection}>
-            <div className={questionCount}>
-              <span>Question {currentQuestion + 1}</span>/{subj.length}
-            </div>
-            <div className={questionText}>
-              {subj[currentQuestion].question}
-
+        <div
+          style={{
+            backgroundColor: "#1F4F81",
+            borderRadius: "50px",
+            width: "75%",
+            margin: "0px auto",
+            padding: "70px 70px",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <img src={headImg} alt="img" height="250px" />
+            <div style={{ width: "50%" }}>
+              <p style={{ color: "#6FF6D5", fontSize: "30px" }}>
+                {subj[currentQuestion].question}
+              </p>
               {isWrong ? (
-                <p>{subj[currentQuestion].answers[eplication].explication}</p>
+                <p style={{ fontSize: "20px", color: "white" }}>
+                  {subj[currentQuestion].answers[eplication].explication}
+                </p>
               ) : null}
             </div>
           </div>
+
           <div className={answerSection}>
             {subj[currentQuestion].answers.map((answerOption, index) => (
               <button
-                className={
-                  isWrong ? (answerOption.isTrue ? correct : incorrect) : null
+                className={btn}
+                style={
+                  isWrong
+                    ? answerOption.isTrue
+                      ? { borderColor: "#6FF6D5" }
+                      : { borderColor: "#FFE063" }
+                    : null
                 }
                 onClick={() =>
                   handleAnswerOptionClick(answerOption.isTrue, index)
@@ -71,10 +88,50 @@ const QuizCard = ({ subject }) => {
               </button>
             ))}
           </div>
-        </>
+        </div>
       )}
     </div>
   );
 };
 
 export default QuizCard;
+
+{
+  /* <div className={app}>
+        {showScore ? (
+          <div className={scoreSection}>
+            You scored {score} out of {subj.length}
+          </div>
+        ) : (
+          <>
+            <div className={questionSection}>
+              <div className={questionCount}>
+                <span>Question {currentQuestion + 1}</span>/{subj.length}
+              </div>
+              <div className={questionText}>
+                {subj[currentQuestion].question}
+
+                {isWrong ? (
+                  <p>{subj[currentQuestion].answers[eplication].explication}</p>
+                ) : null}
+              </div>
+            </div>
+            <div className={answerSection}>
+              {subj[currentQuestion].answers.map((answerOption, index) => (
+                <button
+                  className={
+                    isWrong ? (answerOption.isTrue ? correct : incorrect) : null
+                  }
+                  onClick={() =>
+                    handleAnswerOptionClick(answerOption.isTrue, index)
+                  }
+                >
+                  {answerOption.answerText}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </div> */
+}
