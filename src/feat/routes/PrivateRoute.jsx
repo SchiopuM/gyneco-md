@@ -1,12 +1,6 @@
 import React from "react";
 import { useSigninCheck } from "reactfire";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const {
@@ -21,7 +15,7 @@ const PrivateRoute = ({ children, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: "/home",
+              pathname: "/",
               state: { from: location },
             }}
           />

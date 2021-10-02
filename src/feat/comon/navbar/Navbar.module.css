@@ -4,6 +4,7 @@
   color: #fff;
   background-color: #007344;
   border-radius: 25px;
+  width: 180px;
 }
 .navbar {
   display: flex;

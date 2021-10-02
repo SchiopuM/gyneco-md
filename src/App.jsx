@@ -1,12 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Auth } from "./feat/comon/Auth";
 import { useSigninCheck } from "reactfire";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./feat/routes/PrivateRoute";
 import Homepage from "./feat/components/HomePage";
-import NavBar from "./feat/comon/navbar/Navbar";
 import EducatieSexuala from "./feat/components/EducatieSexuala";
+import QuizCard from "./QuizCard/QuizCard";
+import Navbar from "./feat/comon/navbar/Navbar";
 
 export const App = () => {
   const { status } = useSigninCheck();
@@ -14,13 +13,13 @@ export const App = () => {
   return (
     <>
       <Router>
-        <NavBar />
+        <Navbar />
         <Switch>
-          <Route path="/home">
+          <Route path="/">
             <Homepage />
           </Route>
           <PrivateRoute path="/quiz">
-            <Homepage />
+            <QuizCard subject="virginitate" />
           </PrivateRoute>
           <PrivateRoute path="/webinars">
             <EducatieSexuala />
