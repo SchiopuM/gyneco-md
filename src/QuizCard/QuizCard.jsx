@@ -2,17 +2,6 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import style from "./QuizCard.module.css";
 
-const {
-  app,
-  scoreSection,
-  questionSection,
-  questionCount,
-  questionText,
-  answerSection,
-  correct,
-  incorrect,
-} = style;
-
 const QuizCard = ({ subject }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -21,6 +10,17 @@ const QuizCard = ({ subject }) => {
   const [eplication, seteplication] = useState(0);
   const state = useSelector((state) => state);
   const subj = state[subject];
+
+  const {
+    app,
+    scoreSection,
+    questionSection,
+    questionCount,
+    questionText,
+    answerSection,
+    correct,
+    incorrect,
+  } = style;
 
   const handleAnswerOptionClick = (isCorrect, index) => {
     if (isCorrect) {

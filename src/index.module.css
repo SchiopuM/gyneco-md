@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "bold";
+  src: url("./assets/ABCWhyteInktrap-Bold-Trial.otf");
+}
+@font-face {
+  font-family: "regular";
+  src: url("./assets/ABCWhyteInktrap-Regular-Trial.otf");
+}
+@font-face {
+  font-family: "italic";
+  src: url("./assets/ABCWhyteInktrap-MediumItalic-Trial.otf");
+}
+
+body {
+  font-family: "regular";
+}

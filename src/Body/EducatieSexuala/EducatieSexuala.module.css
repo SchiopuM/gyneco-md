@@ -1,0 +1,16 @@
+.block {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.title {
+  color: #007344;
+  font-family: "bold";
+  font-size: 45px;
+  line-height: 130%;
+}
+
+.secondTitle {
+  color: #1f4f81;
+  font-size: 25px;
+}
