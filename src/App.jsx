@@ -15,13 +15,13 @@ export const App = () => {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Homepage />
           </Route>
-          <PrivateRoute path="/quiz">
+          <PrivateRoute exact path="/quiz">
             <QuizCard subject="virginitate" />
           </PrivateRoute>
-          <PrivateRoute path="/webinars">
+          <PrivateRoute exact path="/webinars">
             <EducatieSexuala />
           </PrivateRoute>
         </Switch>

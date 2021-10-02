@@ -8,7 +8,7 @@ const NavBar = () => {
   const { navbar, links, link } = style;
   return (
     <div className={navbar}>
-      <NavLink to="/home">
+      <NavLink to="/">
         <img alt="img" src={Logo} width="158" height="46" />
       </NavLink>
       <div className={links}>
