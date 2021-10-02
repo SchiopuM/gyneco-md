@@ -4,7 +4,8 @@ import { App } from './App';
 import { getAuth } from 'firebase/auth';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { FirebaseAppProvider, AuthProvider, useFirebaseApp } from 'reactfire';
-
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 const firebaseConfig = {
   apiKey: "AIzaSyApf4y7AhiL19mi4xq4lkyaoiRcMx_jupE",
@@ -19,7 +20,9 @@ const AppInstance = () => {
   const firestoreInstance = getAuth(useFirebaseApp());;
   return (
     <AuthProvider sdk={firestoreInstance}>
-      <App />
+      <Provider store={store}>
+       <App />
+      </Provider>
     </AuthProvider>
   )
 }
