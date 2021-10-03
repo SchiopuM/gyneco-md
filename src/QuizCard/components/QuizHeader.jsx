@@ -15,9 +15,15 @@ const QuizHeader = () => {
       }}
     >
       <div style={{ width: "45%" }}>
-        <p style={{ color: "#007344", fontSize: "55px", fontFamily: "bold" }}>
+        <p
+          style={{
+            color: "#007344",
+            fontSize: "53px",
+            fontFamily: "bold",
+          }}
+        >
           Bună,
-          <p style={{ color: "#FBC343", fontSize: "55px", fontFamily: "bold" }}>
+          <p style={{ color: "#FBC343", fontSize: "50px", fontFamily: "bold" }}>
             {user?.displayName}
           </p>
           Ești gata pentru quiz-ul de azi?

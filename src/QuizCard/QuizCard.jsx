@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import QuizHeader from "./components/QuizHeader";
 import style from "./QuizCard.module.css";
 import headImg from "../assets/Group.png";
+import QuizWiner from "./components/QuizWiner";
 
 const QuizCard = ({ subject }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -13,17 +14,7 @@ const QuizCard = ({ subject }) => {
   const state = useSelector((state) => state);
   const subj = state[subject];
 
-  const {
-    // app,
-    // scoreSection,
-    // questionSection,
-    // questionCount,
-    // questionText,
-    btn,
-    answerSection,
-    correct,
-    incorrect,
-  } = style;
+  const { btn, answerSection } = style;
 
   const handleAnswerOptionClick = (isCorrect, index) => {
     if (isCorrect) {
@@ -44,8 +35,6 @@ const QuizCard = ({ subject }) => {
     <div style={{ margin: "100px 0px" }}>
       <QuizHeader />
       {showScore ? (
-        <p>some</p>
-      ) : (
         <div
           style={{
             backgroundColor: "#1F4F81",
@@ -55,9 +44,21 @@ const QuizCard = ({ subject }) => {
             padding: "70px 70px",
           }}
         >
+          <QuizWiner />
+        </div>
+      ) : (
+        <div
+          style={{
+            backgroundColor: "#1F4F81",
+            borderRadius: "50px",
+            width: "75%",
+            margin: "0px auto",
+            padding: "40px",
+          }}
+        >
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <img src={headImg} alt="img" height="250px" />
-            <div style={{ width: "50%" }}>
+            <img src={headImg} alt="img" height="230px" />
+            <div style={{ width: "60%" }}>
               <p style={{ color: "#6FF6D5", fontSize: "30px" }}>
                 {subj[currentQuestion].question}
               </p>
@@ -68,7 +69,6 @@ const QuizCard = ({ subject }) => {
               ) : null}
             </div>
           </div>
-
           <div className={answerSection}>
             {subj[currentQuestion].answers.map((answerOption, index) => (
               <button
@@ -95,43 +95,3 @@ const QuizCard = ({ subject }) => {
 };
 
 export default QuizCard;
-
-{
-  /* <div className={app}>
-        {showScore ? (
-          <div className={scoreSection}>
-            You scored {score} out of {subj.length}
-          </div>
-        ) : (
-          <>
-            <div className={questionSection}>
-              <div className={questionCount}>
-                <span>Question {currentQuestion + 1}</span>/{subj.length}
-              </div>
-              <div className={questionText}>
-                {subj[currentQuestion].question}
-
-                {isWrong ? (
-                  <p>{subj[currentQuestion].answers[eplication].explication}</p>
-                ) : null}
-              </div>
-            </div>
-            <div className={answerSection}>
-              {subj[currentQuestion].answers.map((answerOption, index) => (
-                <button
-                  className={
-                    isWrong ? (answerOption.isTrue ? correct : incorrect) : null
-                  }
-                  onClick={() =>
-                    handleAnswerOptionClick(answerOption.isTrue, index)
-                  }
-                >
-                  {answerOption.answerText}
-                </button>
-              ))}
-            </div>
-          </>
-        )}
-      </div>
-    </div> */
-}
